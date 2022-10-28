@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "365103187944",
+    "project_id": "codingo-ed3d9",
+    "storage_bucket": "codingo-ed3d9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:365103187944:android:70a75084dddf6ad302065d",
+        "android_client_info": {
+          "package_name": "com.company.codingo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "365103187944-hc9b9g7ob34uojfeg3jipd3nj32rc5ej.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClZMN-syELrFKlll4WnHnUoSnVf64YMxM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "365103187944-hc9b9g7ob34uojfeg3jipd3nj32rc5ej.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
