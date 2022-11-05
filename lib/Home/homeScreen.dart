@@ -60,7 +60,7 @@ class _homeScreenState extends State<homeScreen> {
                         Icons.notifications,
                         size: 26,
                         color: Colors.white,
-                  )),
+                      )),
                   Positioned(
                     left: 0,
                     top: 10,
@@ -89,6 +89,7 @@ class _homeScreenState extends State<homeScreen> {
           child: Padding(
             padding: EdgeInsets.all(10),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CarouselSlider(
                   options: CarouselOptions(
@@ -121,126 +122,196 @@ class _homeScreenState extends State<homeScreen> {
                                         : Color(0xff4285F4),
                                     width: 2),
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(20))),
+                                BorderRadius.all(Radius.circular(20))),
                           ),
                         );
                       },
                     );
                   }).toList(),
                 ),
-                Divider(
-                  height: 25,
-                  color: Colors.white70,
-                  thickness: 1,
-                  endIndent: 15,
-                  indent: 15,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Container(
-                      height: MediaQuery.of(context).size.width / 2.2,
-                      width: MediaQuery.of(context).size.width / 2.2,
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              fit: BoxFit.fitWidth,
-                              image: AssetImage(
-                                  "assets/Images/Learn logo CodinGo.png")),
-                          color: Colors.white10,
-                          border: Border.all(
-                              color: Colors.white70 /*Color(0xff1AC70B)*/,
-                              width: 2),
-                          borderRadius: BorderRadius.all(Radius.circular(20))),
-                    ),
-                    Container(
-                      height: MediaQuery.of(context).size.width / 2.2,
-                      width: MediaQuery.of(context).size.width / 2.2,
-                      decoration: BoxDecoration(
-                          color: Colors.white10,
-                          image: DecorationImage(
-                              fit: BoxFit.fitWidth,
-                              image: AssetImage(
-                                  "assets/Images/DSA logo CodinGo.png")),
-                          border: Border.all(
-                              color: Colors.white70 /*Color(0xffd00000)*/,
-                              width: 2),
-                          borderRadius: BorderRadius.all(Radius.circular(20))),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (BuildContext context) => contest()));
-                      },
-                      child: Container(
-                        height: MediaQuery.of(context).size.width / 2.2,
-                        width: MediaQuery.of(context).size.width / 2.2,
-                        decoration: BoxDecoration(
-                            color: Colors.white10,
-                            image: DecorationImage(
+
+                SizedBox(height: 20),
+                Padding(
+                  padding: const EdgeInsets.only(left:8.0,right: 8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("For You",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontFamily: "Poppins")),
+                      Divider(
+                          thickness: 1,
+                          color: Colors.white,
+                          endIndent: MediaQuery.of(context).size.width * 0.6),
+                      SizedBox(height: 5),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: [
+                            Container(
+                              height: MediaQuery.of(context).size.width / 1.8,
+                              width: MediaQuery.of(context).size.width / 2.5,
+                              decoration: BoxDecoration(
+                                  color: Colors.white10,
+                                  border: Border.all(
+                                      color: Colors.white70 /*Color(0xffd00000)*/,
+                                      width: 2),
+                                  borderRadius: BorderRadius.all(Radius.circular(20))),
+                              child: Image.asset(
+                                  "assets/forYou/c++.png",
                                 fit: BoxFit.fitWidth,
-                                image: AssetImage(
-                                    "assets/Images/Coding Contest logo CodinGo.png")),
-                            border: Border.all(
-                                color: Colors.white70 /*Color(0xffF4B400)*/,
-                                width: 2),
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(20))),
+                              ),
+                            ),
+                            SizedBox(width: 10),
+                            Container(
+                              height: MediaQuery.of(context).size.width / 1.8,
+                              width: MediaQuery.of(context).size.width / 2.5,
+                              decoration: BoxDecoration(
+                                  color: Colors.white10,
+                                  border: Border.all(
+                                      color: Colors.white70 /*Color(0xffd00000)*/,
+                                      width: 2),
+                                  borderRadius: BorderRadius.all(Radius.circular(20))),
+                              child: Image.asset(
+                                "assets/forYou/Java.png",
+                                fit: BoxFit.fitWidth,
+                              ),
+                            ),
+                            SizedBox(width: 10),
+                            Container(
+                              height: MediaQuery.of(context).size.width / 1.8,
+                              width: MediaQuery.of(context).size.width / 2.5,
+                              decoration: BoxDecoration(
+                                  color: Colors.white10,
+                                  border: Border.all(
+                                      color: Colors.white70 /*Color(0xffd00000)*/,
+                                      width: 2),
+                                  borderRadius: BorderRadius.all(Radius.circular(20))),
+                              child: Image.asset(
+                                "assets/forYou/python.png",
+                                fit: BoxFit.fitWidth,
+                              ),
+                            ),
+                            SizedBox(width: 10),
+                            Container(
+                              height: MediaQuery.of(context).size.width / 1.8,
+                              width: MediaQuery.of(context).size.width / 2.5,
+                              decoration: BoxDecoration(
+                                  color: Colors.white10,
+                                  border: Border.all(
+                                      color: Colors.white70 /*Color(0xffd00000)*/,
+                                      width: 2),
+                                  borderRadius: BorderRadius.all(Radius.circular(20))),
+                              child: Image.asset(
+                                "assets/forYou/js.png",
+                                fit: BoxFit.fitWidth,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                    Container(
-                      height: MediaQuery.of(context).size.width / 2.2,
-                      width: MediaQuery.of(context).size.width / 2.2,
-                      decoration: BoxDecoration(
-                          color: Colors.white10,
-                          image: DecorationImage(
-                              fit: BoxFit.fitWidth,
-                              image: AssetImage(
-                                  "assets/Images/Calander logo CodinGo.png")),
-                          border: Border.all(
-                              color: Colors.white70 /*Color(0xff4285F4)*/,
-                              width: 2),
-                          borderRadius: BorderRadius.all(Radius.circular(20))),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-                Divider(
-                  height: 25,
-                  color: Colors.white70,
-                  thickness: 1,
-                  endIndent: 15,
-                  indent: 15,
-                ),
-                Container(
-                  height: 80,
-                  width: MediaQuery.of(context).size.width,
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
-                          fit: BoxFit.fill,
-                          image: AssetImage("assets/Images/ytwall.jpg")),
-                      color: Colors.white10,
-                      border: Border.all(color: Colors.white, width: 2),
-                      borderRadius: BorderRadius.all(Radius.circular(20))),
-                ),
-                SizedBox(height: 10),
-                Container(
-                  height: 80,
-                  width: MediaQuery.of(context).size.width,
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
-                          fit: BoxFit.fill,
-                          image: AssetImage("assets/Images/interview.jpg")),
-                      color: Colors.white10,
-                      border: Border.all(color: Color(0xff4285F4), width: 2),
-                      borderRadius: BorderRadius.all(Radius.circular(20))),
-                ),
+
+                SizedBox(height: 20),
+                Padding(
+                  padding: const EdgeInsets.only(left:8.0,right: 8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("Features",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontFamily: "Poppins")),
+                      Divider(
+                          thickness: 1,
+                          color: Colors.white,
+                          endIndent: MediaQuery.of(context).size.width * 0.6),
+                      SizedBox(height: 5),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Container(
+                            height: MediaQuery.of(context).size.width / 2.2,
+                            width: MediaQuery.of(context).size.width / 2.2,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    fit: BoxFit.fitWidth,
+                                    image: AssetImage(
+                                        "assets/Images/Learn logo CodinGo.png")),
+                                color: Colors.white10,
+                                border: Border.all(
+                                    color: Colors.white70 /*Color(0xff1AC70B)*/,
+                                    width: 2),
+                                borderRadius: BorderRadius.all(Radius.circular(20))),
+                          ),
+                          SizedBox(height: 10),
+                          Container(
+                            height: MediaQuery.of(context).size.width / 2.2,
+                            width: MediaQuery.of(context).size.width / 2.2,
+                            decoration: BoxDecoration(
+                                color: Colors.white10,
+                                image: DecorationImage(
+                                    fit: BoxFit.fitWidth,
+                                    image: AssetImage(
+                                        "assets/Images/DSA logo CodinGo.png")),
+                                border: Border.all(
+                                    color: Colors.white70 /*Color(0xffd00000)*/,
+                                    width: 2),
+                                borderRadius: BorderRadius.all(Radius.circular(20))),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 10),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (BuildContext context) => contest()));
+                            },
+                            child: Container(
+                              height: MediaQuery.of(context).size.width / 2.2,
+                              width: MediaQuery.of(context).size.width / 2.2,
+                              decoration: BoxDecoration(
+                                  color: Colors.white10,
+                                  image: DecorationImage(
+                                      fit: BoxFit.fitWidth,
+                                      image: AssetImage(
+                                          "assets/Images/Coding Contest logo CodinGo.png")),
+                                  border: Border.all(
+                                      color: Colors.white70 /*Color(0xffF4B400)*/,
+                                      width: 2),
+                                  borderRadius:
+                                  BorderRadius.all(Radius.circular(20))),
+                            ),
+                          ),
+                          Container(
+                            height: MediaQuery.of(context).size.width / 2.2,
+                            width: MediaQuery.of(context).size.width / 2.2,
+                            decoration: BoxDecoration(
+                                color: Colors.white10,
+                                image: DecorationImage(
+                                    fit: BoxFit.fitWidth,
+                                    image: AssetImage(
+                                        "assets/Images/Calander logo CodinGo.png")),
+                                border: Border.all(
+                                    color: Colors.white70 /*Color(0xff4285F4)*/,
+                                    width: 2),
+                                borderRadius: BorderRadius.all(Radius.circular(20))),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                )
               ],
             ),
           ),
