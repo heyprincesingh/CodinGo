@@ -8,6 +8,8 @@ final List<String> imgList = [
   "COTD CodinGo.png",
   "Resume CodinGo.png",
 ];
+
+final List<String> forYou = ["c++.png","Java.png","python.png","js.png","css.png"];
 int sliderCardIndex = 0;
 
 class homeScreen extends StatefulWidget {
@@ -130,6 +132,7 @@ class _homeScreenState extends State<homeScreen> {
                   }).toList(),
                 ),
 
+
                 SizedBox(height: 20),
                 Padding(
                   padding: const EdgeInsets.only(left:8.0,right: 8.0),
@@ -145,76 +148,83 @@ class _homeScreenState extends State<homeScreen> {
                           thickness: 1,
                           color: Colors.white,
                           endIndent: MediaQuery.of(context).size.width * 0.6),
-                      SizedBox(height: 5),
-                      SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: Row(
-                          children: [
-                            Container(
-                              height: MediaQuery.of(context).size.width / 1.8,
-                              width: MediaQuery.of(context).size.width / 2.5,
-                              decoration: BoxDecoration(
-                                  color: Colors.white10,
-                                  border: Border.all(
-                                      color: Colors.white70 /*Color(0xffd00000)*/,
-                                      width: 2),
-                                  borderRadius: BorderRadius.all(Radius.circular(20))),
-                              child: Image.asset(
-                                  "assets/forYou/c++.png",
-                                fit: BoxFit.fitWidth,
-                              ),
-                            ),
-                            SizedBox(width: 10),
-                            Container(
-                              height: MediaQuery.of(context).size.width / 1.8,
-                              width: MediaQuery.of(context).size.width / 2.5,
-                              decoration: BoxDecoration(
-                                  color: Colors.white10,
-                                  border: Border.all(
-                                      color: Colors.white70 /*Color(0xffd00000)*/,
-                                      width: 2),
-                                  borderRadius: BorderRadius.all(Radius.circular(20))),
-                              child: Image.asset(
-                                "assets/forYou/Java.png",
-                                fit: BoxFit.fitWidth,
-                              ),
-                            ),
-                            SizedBox(width: 10),
-                            Container(
-                              height: MediaQuery.of(context).size.width / 1.8,
-                              width: MediaQuery.of(context).size.width / 2.5,
-                              decoration: BoxDecoration(
-                                  color: Colors.white10,
-                                  border: Border.all(
-                                      color: Colors.white70 /*Color(0xffd00000)*/,
-                                      width: 2),
-                                  borderRadius: BorderRadius.all(Radius.circular(20))),
-                              child: Image.asset(
-                                "assets/forYou/python.png",
-                                fit: BoxFit.fitWidth,
-                              ),
-                            ),
-                            SizedBox(width: 10),
-                            Container(
-                              height: MediaQuery.of(context).size.width / 1.8,
-                              width: MediaQuery.of(context).size.width / 2.5,
-                              decoration: BoxDecoration(
-                                  color: Colors.white10,
-                                  border: Border.all(
-                                      color: Colors.white70 /*Color(0xffd00000)*/,
-                                      width: 2),
-                                  borderRadius: BorderRadius.all(Radius.circular(20))),
-                              child: Image.asset(
-                                "assets/forYou/js.png",
-                                fit: BoxFit.fitWidth,
-                              ),
-                            ),
-                          ],
+                      SizedBox(
+                          height: 5
+                      ),
+                      Container(
+                        height: MediaQuery.of(context).size.width / 1.8,
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: 5,
+                          itemBuilder: (context, index){
+                            return Padding(
+                                  padding: EdgeInsets.only(right: 10),
+                                  child: Container(
+                                  width: MediaQuery.of(context).size.width / 2.5,
+                                  decoration: BoxDecoration(
+                                      color: Colors.white10,
+                                      border: Border.all(
+                                          color: Colors.white70,
+                                          width: 2),
+                                      borderRadius: BorderRadius.all(Radius.circular(20))),
+                                      child: Stack(
+                                        alignment: Alignment.center,
+                                        children: [
+                                          Image.asset(
+                                        "assets/forYou/${forYou[index]}",
+                                        fit: BoxFit.fitWidth,
+                                      ),
+                                          index == 0 ?
+                                            Positioned(
+                                        child: Container(
+                                          width: MediaQuery.of(context).size.width / 2.3,
+                                          height: MediaQuery.of(context).size.width / 9,
+                                          decoration: BoxDecoration(
+                                              borderRadius: BorderRadius.only(
+                                                bottomLeft: Radius.circular(18),
+                                                bottomRight: Radius.circular(18),
+                                              ),
+                                              gradient: LinearGradient(
+                                                stops: [0.45, 1.0],
+                                                colors: [
+                                                  Color(0xffd00000),
+                                                  Colors.transparent,
+                                                ],
+                                              )
+                                          ),
+                                          child: Row(
+                                            children: [
+                                              Padding(
+                                                padding: const EdgeInsets.all(8),
+                                                child: Icon(Icons.play_circle_rounded,color: Colors.white),
+                                              ),
+                                              Text("Resume",
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 16,
+                                                    fontWeight: FontWeight.bold
+                                                ),)
+                                            ],
+                                          ),
+                                        ),
+                                        bottom: 0,
+                                        left: 0,
+                                      )
+                                              : SizedBox(
+                                              width: 0,
+                                              height: 0,
+                                            )
+                                        ],
+                                      )
+                                  ),
+                            );
+                          },
                         ),
                       ),
                     ],
                   ),
                 ),
+
 
                 SizedBox(height: 20),
                 Padding(
@@ -233,11 +243,11 @@ class _homeScreenState extends State<homeScreen> {
                           endIndent: MediaQuery.of(context).size.width * 0.6),
                       SizedBox(height: 5),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Container(
-                            height: MediaQuery.of(context).size.width / 2.2,
-                            width: MediaQuery.of(context).size.width / 2.2,
+                            height: MediaQuery.of(context).size.width / 2.25,
+                            width: MediaQuery.of(context).size.width / 2.25,
                             decoration: BoxDecoration(
                                 image: DecorationImage(
                                     fit: BoxFit.fitWidth,
@@ -249,10 +259,9 @@ class _homeScreenState extends State<homeScreen> {
                                     width: 2),
                                 borderRadius: BorderRadius.all(Radius.circular(20))),
                           ),
-                          SizedBox(height: 10),
                           Container(
-                            height: MediaQuery.of(context).size.width / 2.2,
-                            width: MediaQuery.of(context).size.width / 2.2,
+                            height: MediaQuery.of(context).size.width / 2.25,
+                            width: MediaQuery.of(context).size.width / 2.25,
                             decoration: BoxDecoration(
                                 color: Colors.white10,
                                 image: DecorationImage(
@@ -268,7 +277,7 @@ class _homeScreenState extends State<homeScreen> {
                       ),
                       SizedBox(height: 10),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           GestureDetector(
                             onTap: () {
@@ -278,8 +287,8 @@ class _homeScreenState extends State<homeScreen> {
                                       builder: (BuildContext context) => contest()));
                             },
                             child: Container(
-                              height: MediaQuery.of(context).size.width / 2.2,
-                              width: MediaQuery.of(context).size.width / 2.2,
+                              height: MediaQuery.of(context).size.width / 2.25,
+                              width: MediaQuery.of(context).size.width / 2.25,
                               decoration: BoxDecoration(
                                   color: Colors.white10,
                                   image: DecorationImage(
@@ -294,8 +303,8 @@ class _homeScreenState extends State<homeScreen> {
                             ),
                           ),
                           Container(
-                            height: MediaQuery.of(context).size.width / 2.2,
-                            width: MediaQuery.of(context).size.width / 2.2,
+                            height: MediaQuery.of(context).size.width / 2.25,
+                            width: MediaQuery.of(context).size.width / 2.25,
                             decoration: BoxDecoration(
                                 color: Colors.white10,
                                 image: DecorationImage(
