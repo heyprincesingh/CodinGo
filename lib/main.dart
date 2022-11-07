@@ -1,3 +1,4 @@
+import 'package:codingo/Home/homeScreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'Splash Screen/splash.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
             ),
             debugShowCheckedModeBanner: false,
             title: 'CodinGo',
-            home: SplashScreen(),
+            home: homeScreen(),//SplashScreen(),
           );
         });
   }
